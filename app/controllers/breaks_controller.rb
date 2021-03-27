@@ -1,0 +1,3 @@
+class BreaksController < ApplicationController
+
+end
