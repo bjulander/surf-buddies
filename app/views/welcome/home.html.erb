@@ -1,0 +1,10 @@
+<% if name = session[:name] %>
+  <h1> Welcome</h1>
+  <p>You were signed in by <%= session[:omniauth_data]['provider'] %></p> 
+<% else %>
+  <h1>Hmmm... No account located.</h1>
+  <p>Create an account <%=link_to 'Here', '/users/new'%>.</p>
+  <p> or </p>
+  <p>Sign up <%= link_to ' with Google', '/auth/google'%>.</p>
+  <p>Sign up <%= link_to ' with Facebook', '/auth/facebook'%>.</p>
+<% end %>

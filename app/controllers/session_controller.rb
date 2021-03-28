@@ -6,16 +6,21 @@ class SessionController < ApplicationController
   end
 
   def create
-    if @user = User.find_by(username: params[:user][:username])
+    @user = User.find_by(username: params[:user][:username])
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to @user
+    elsif @user
+      @errors = ["Invalid Password"]
+      render 'new'
     else
+      @errors = ["Invalid Username"]
       render 'new'
     end
   end
 
   def destroy
-    session.delete :user_id
+    session.clear
     redirect_to root_path
   end
 
