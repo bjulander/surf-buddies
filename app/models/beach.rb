@@ -1,4 +1,4 @@
 class Beach < ApplicationRecord
-    has_many :breaks
-    has_many :users, through: breaks
+    # has_many :breaks
+    # has_many :users, through: :breaks
 end

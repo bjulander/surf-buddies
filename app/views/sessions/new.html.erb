@@ -1,5 +1,10 @@
-<% if session[:user_id] %>
-<%= form_tag('/session', method: :post) do %>
+<h1> Log In</h1>
+
+<% @errors && @errors.each do |e| %>
+    <li><%= e %> </li>
+<%end%>
+
+<%= form_tag login_path do %>
 
       <%= label_tag(:username, "Username:") %>
       <%= text_field_tag(:username) %>
@@ -7,5 +12,5 @@
       <%= label_tag(:password, "Password:") %>
       <%= password_field_tag(:password) %>
 
-      <%= submit_tag("Sign In") %>
+      <%= submit_tag("Log In") %>
   <% end %> 

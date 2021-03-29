@@ -11,6 +11,13 @@
   </head>
 
   <body>
+  <% if current_user%>
+    <%= button_to "Log Out",  logout_path, method: :post%>
+  <%else%>
+      <%= link_to "Log In", login_path %>
+      <%= link_to "Sign Up", signup_path %>
+      <%= button_to "Log Out", logout_path, method: :post%>
+  <%end%>
     <%= yield %>
   </body>
 </html>
