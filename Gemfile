@@ -5,10 +5,11 @@ ruby '2.6.1'
 
 gem 'bcrypt'
 gem 'pry'
-# gem 'omniauth', '~> 1.9.1'
-# gem 'omniauth-google'
-# gem 'dotenv-rails'
-# gem 'thin'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+gem 'thin'
 
 
 
