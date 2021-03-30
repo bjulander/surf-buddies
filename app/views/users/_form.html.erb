@@ -1,6 +1,6 @@
 <h1> Please create an account</h1>
 
-<% user_errors && user_errors.each do |e| %>
+<%user_errors && user_errors.each do |e| %>
     <li><%=e%></li>
 <%end%>
 
@@ -15,5 +15,5 @@
     
 <%end%>
 
-<%= link_to "Sign Up with Google.", '/auth/google'%><br><br>
+<%= link_to "Sign Up with Google.", '/auth/google_oauth2'%><br><br>
 <%= link_to "Sign Up with Facebook.", '/auth/facebook'%>

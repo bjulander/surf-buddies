@@ -1,10 +1,10 @@
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
-      t.string :username
+      t.text :username
       t.string :password_digest
       t.text :location
-      t.integer :age
+      t.text :age
       t.integer :skill_level
 
       

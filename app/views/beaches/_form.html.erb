@@ -1,0 +1,12 @@
+<%= form_for(@beach) do |f| %>
+    <%= f.label("Beach Name:") %>
+    <%=f.text_field(:name) %>
+    <%= %>
+    <%= %>
+    <%= %>
+        <%=f.fields_for :breaks do |b| %>
+            <%=b.label "Name" %>
+            <%=b.text_field :name %>
+        <%=end %>
+    <%=f.submit "Submit" %>
+<%=end%>

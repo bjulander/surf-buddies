@@ -23,9 +23,5 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:username, :password, :password_confirmation)
     end
-
-    def errors
-      self.errors.full_messages
-    end
     
 end

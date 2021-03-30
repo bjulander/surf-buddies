@@ -3,11 +3,12 @@ class CreateBreaks < ActiveRecord::Migration[6.1]
     create_table :breaks do |t|
       t.text :location
       t.text :name
-      t.text :break
+      t.text :break_type
       t.text :direction
       t.text :height
       t.text :water_level
-      t.text :shakas
+      t.integer :skill_level_required
+      t.integer :shakas
       t.integer :user_id
       t.integer :beach_id
       t.timestamps null: false

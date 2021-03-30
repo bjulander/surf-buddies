@@ -24,11 +24,12 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
   create_table "breaks", force: :cascade do |t|
     t.text "location"
     t.text "name"
-    t.text "break"
+    t.text "break_type"
     t.text "direction"
     t.text "height"
     t.text "water_level"
-    t.text "shakas"
+    t.integer "skill_level_required"
+    t.integer "shakas"
     t.integer "user_id"
     t.integer "beach_id"
     t.datetime "created_at", precision: 6, null: false
@@ -36,10 +37,10 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.text "username"
     t.string "password_digest"
     t.text "location"
-    t.integer "age"
+    t.text "age"
     t.integer "skill_level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

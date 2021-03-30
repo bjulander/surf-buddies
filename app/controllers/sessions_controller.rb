@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def create_with_fb
     user = User.find_or_create_by(username: outside_auth['info']['email']) do |u|
       u.password = 'password'
-      u.password_confirmation = 'password'
+      u.password_confirmation = "password"
     end
     if user.save || user.id
       session[:user_id] = user.id
@@ -35,9 +35,9 @@ class SessionsController < ApplicationController
   def create_with_g
     user = User.find_or_create_by(username: outside_auth['info']['email']) do |u|
       u.password = 'password'
-      u.password_confirmation = 'password'
+      u.password_confirmation = "password"
     end
-    if user.save
+    if user.save || user.id
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
