@@ -1,8 +1,6 @@
 <h1> Please create an account</h1>
 
-<%user_errors && user_errors.each do |e| %>
-    <li><%=e%></li>
-<%end%>
+<%= render(partial: "application/errors", locals: {errors: @user.errors.full_messages})%>
 
 <%= form_for @user, url: signup_path(@user) do |f| %>
     <%= f.label "Username" %>

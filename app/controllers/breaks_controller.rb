@@ -21,9 +21,17 @@ class BreaksController < ApplicationController
         if params[:beach_id]
             @break.beach_id = params[:beach_id]
         end
-        @break.save
+        if @break.save
         redirect_to beaches_path
+        else
+            render :new
+        end
     end
+
+    private
+
+    def break_params
+        params.require(:break).permit(:name, :beaches_id)
 
 
 end

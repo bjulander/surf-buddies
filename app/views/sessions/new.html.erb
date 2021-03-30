@@ -1,8 +1,6 @@
 <h1> Log In</h1>
 
-<% @errors && @errors.each do |e| %>
-    <li><%= e %> </li>
-<%end%>
+<%= render(partial: "application/errors", locals: {errors: @errors})%>
 
 <%= form_tag login_path do %>
 
@@ -16,3 +14,4 @@
   <% end %> 
 
   <p>Log In <%= link_to ' with Facebook', '/auth/facebook'%>.</p>
+  <p>Log In <%= link_to ' with Google', '/auth/google_oauth2'%>.</p>

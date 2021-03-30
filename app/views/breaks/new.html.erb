@@ -1,1 +1,20 @@
-<%= render 'form' %> 
+<%= render(partial: "application/errors", locals: {errors: @break.errors.full_messages})%>
+
+<% if @beach %>
+    <h2> <%= @beach.name %></h2>
+<%end%>
+
+
+<%= form_for(@break, url: form_url_helper(@beach)) do |f| %>
+    <%= f.label "Break Name:" %>
+    <%=f.text_field:name %>
+    <%= %>
+    <%= %>
+    <%= %>
+    <%if !@beach%>
+        <%=f.label "Beach"%>
+            <%=f.label "Name" %>
+            <%=f.collection_select(:beach_id, @beaches, :id, :name) %>
+        <%=end %>
+    <%=f.submit "Submit" %>
+<%=end%>

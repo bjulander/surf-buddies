@@ -1,4 +1,6 @@
 class BeachesController < ApplicationController
+
+    before_action(:set_beach, except: [:index, :new, :create])
     
     def index
         if params[:user_id]
@@ -23,7 +25,6 @@ class BeachesController < ApplicationController
         if @beach.save
             redirect_to beach_path(@beach)
         else
-            @errors = @beach.errors.full_messages
             render :new
         end
     end
@@ -35,7 +36,6 @@ class BeachesController < ApplicationController
         if @beach.update(beach_params)
             redirect_to(beach_path(@beach))
         else
-            @errors = @beach.errors.full_messages
             render :edit
         end
     end
@@ -51,8 +51,8 @@ class BeachesController < ApplicationController
         params.require(:beach).permit(:name, breaks_attributes: [:name])
     end
 
-    # def set_item
-    #     @beach = Beach.find_by(id: params[:id])
-    # end
+    def set_beach
+        @beach = Beach.find_by(id: params[:id])
+    end
 
 end
