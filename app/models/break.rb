@@ -2,5 +2,5 @@ class Break < ApplicationRecord
     belongs_to :user
     belongs_to :beach
 
-    scope(:direction_search, ->(direction) {self.where("direction == ?", direction)})
+    scope(:breaks_search, ->(direction, shakas) {self.where("direction == ?", direction)})
 end

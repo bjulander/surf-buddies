@@ -1,4 +1,8 @@
-<h1> All Breaks</h1>
-<% @breaks.each do |b| %>
-    <li> <%= link_to(b.name, break_path(b))%></li>
-<%end%>
+<h1>Search Breaks</h1>
+
+<%= form_with url: breaks_path, method: :get, scope: "break" do |f| %>
+    <%= f.text_field :direction %>
+    <%= f.submit "Search" %>
+    <%end%>
+
+<%= render(partial: "breaks", locals: {breaks: @breaks, index: true})%>

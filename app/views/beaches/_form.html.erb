@@ -6,7 +6,7 @@
     <%= %>
     <%= %>
     <%= %>
-        <%=f.fields_for :breaks do |b| %>
+        <%=f.fields_for :breaks, @breaks do |b| %>
             <%=b.label "Name" %>
             <%=b.text_field :name %>
         <%=end %>

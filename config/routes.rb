@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 root 'welcome#home'
 
 resources (:users) do 
-  resources :breaks 
+  resources :beaches
 end 
 
 resources (:beaches) do 

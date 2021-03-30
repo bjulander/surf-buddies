@@ -16,7 +16,8 @@ class BeachesController < ApplicationController
     
     def new
         @beach = Beach.new
-        @beach.breaks.build  
+        @beach.breaks.build(user: current_user)
+        @breaks = @beach.breaks.select{|b| b.user_id == current_user.id}  
     end
 
     def create 
@@ -30,12 +31,14 @@ class BeachesController < ApplicationController
     end
 
     def edit
+        @breaks = @beach.breaks.where(user_id: current_user.id)
     end
 
     def update
         if @beach.update(beach_params)
             redirect_to(beach_path(@beach))
         else
+            @breaks = @beach.breaks.select{|b| b.user_id == current_user.id}  
             render :edit
         end
     end
@@ -48,7 +51,7 @@ class BeachesController < ApplicationController
     private 
 
     def beach_params
-        params.require(:beach).permit(:name, breaks_attributes: [:name])
+        params.require(:beach).permit(:name, breaks_attributes: [:name, :user_id, :id])
     end
 
     def set_beach

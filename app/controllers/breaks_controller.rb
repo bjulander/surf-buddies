@@ -1,7 +1,11 @@
 class BreaksController < ApplicationController
 
     def index
+        if params[:break]
+            @breaks = Break.breaks_search(params[:direction])
+        else
         @breaks = Break.all
+        end
     end
     
     def new

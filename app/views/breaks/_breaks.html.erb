@@ -1,1 +1,3 @@
-
+<% @breaks.each do |b| %>
+    <li> <%= link_to(b.name, break_path(b))%></li>
+<%end%>
