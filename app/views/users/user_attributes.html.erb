@@ -1,0 +1,16 @@
+    <%=f.label "Phone Number" %>
+    <%=f.text_field :phone_number %><p>
+    <%=f.label "Location" %>
+    <%=f.text_field :location %><p>
+    <%=f.label :skill_level, "Skill Level", value: 1 %>
+    <%=f.radio_button :skill_level, 1 %>Almost Kook<%=f.radio_button :skill_level, 2 %>Catchin Waves<%=f.radio_button :skill_level, 3 %>Nothin Fancy<%=f.radio_button :skill_level, 4 %>A Little Flair<%=f.radio_button :skill_level, 5 %>Basically Pro<p>
+    <%=f.label "Private?" %>
+    <%=f.radio_button :private, 1 %>No<%=f.radio_button :private, 2 %>Yes<p>
+
+
+    profile_table ?
+
+      t.text :phone_number, default: "N/A"
+      t.text :location, default: "N/A"
+      t.integer :skill_level
+      t.integer :private

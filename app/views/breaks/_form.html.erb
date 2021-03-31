@@ -1,0 +1,24 @@
+<%= form_for @break do |f| %>
+    <%= f.label "Location" %>
+    <%=f.text_field :location %><p>
+    <%=f.label "Name" %>
+    <%=f.text_field :name %><p>
+    <%=f.label "Break Type" %>
+    <%=f.text_field :break_type %><p>
+    <%= f.label "Direction" %>
+    <%=f.text_field :direction %><p>
+    <%= f.label "Height" %>
+    <%=f.text_field :height %><p>
+    <%= f.label "Water Level" %>
+    <%=f.text_field :water_level %><p>
+    <%= f.label "Suggested Skill Level" %>
+    <%=f.integer :suggested_skill_level %><p>
+    <%= f.label "Shakas" %>
+    <%=f.integer :shakas %><p>
+    <%= f.label "Beach" %>
+    <%=f.integer :beach_id %><p>
+
+
+
+    <%=f.submit "Create" %>
+<%end%>

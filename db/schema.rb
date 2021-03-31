@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
     t.text "street"
     t.text "city"
     t.text "parking"
+    t.integer "add_break", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
     t.text "direction"
     t.text "height"
     t.text "water_level"
-    t.integer "skill_level_required"
+    t.integer "suggested_skill_level"
     t.integer "shakas"
     t.integer "user_id"
     t.integer "beach_id"
@@ -39,10 +40,6 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
   create_table "users", force: :cascade do |t|
     t.text "username"
     t.string "password_digest"
-    t.text "phone_number", default: "N/A"
-    t.text "location", default: "N/A"
-    t.integer "skill_level"
-    t.integer "private"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

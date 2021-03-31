@@ -35,7 +35,7 @@ class BreaksController < ApplicationController
     private
 
     def break_params
-        params.require(:break).permit(:name, :beaches_id)
-
+        params.require(:break).permit(:location, :name, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas, :beach_id, :user_id)
+    end
 
 end

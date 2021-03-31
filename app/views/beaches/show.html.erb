@@ -2,7 +2,7 @@
 
 <p> <%= @beach.name %> </p>
 
-<%= render "breaks/breaks", locals: {breaks: @beach.breaks, index: true}) %>
+<%= render(partial: "breaks/breaks", locals: {breaks: @beach.breaks}) %>
 
 <%= link_to "Edit", edit_beach_path(@beach) %>
 

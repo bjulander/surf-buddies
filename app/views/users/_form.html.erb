@@ -9,14 +9,6 @@
     <%=f.password_field :password %><p>
     <%=f.label "Confirm Password" %>
     <%=f.password_field :password_confirmation %><p>
-    <%=f.label "Phone Number" %>
-    <%=f.text_field :phone_number %><p>
-    <%=f.label "Location" %>
-    <%=f.text_field :location %><p>
-    <%=f.label :skill_level, "Skill Level", value: 1 %>
-    <%=f.radio_button :skill_level, name: "skill_level", checked: 1 %>Almost Kook<%=f.radio_button :skill_level, id: 2, name: "skill_level", value: 2 %>Catchin Waves<%=f.radio_button :skill_level, id: 3, name: "skill_level", value: 3 %>Nothin Fancy<%=f.radio_button :skill_level, id: 4, name: "skill_level", value: 4 %>A Little Flair<%=f.radio_button :skill_level, id: 5, name: "skill_level", value: 5 %>Basically Pro<p>
-    <%=f.label "Private?" %>
-    <%=f.radio_button :private, id: 1, name: "private", value: 1 %>No<p>
     <%=f.submit "Sign Up" %>
 <%end%>
 

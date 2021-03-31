@@ -5,9 +5,8 @@ class CreateBeaches < ActiveRecord::Migration[6.1]
       t.text :street
       t.text :city
       t.text :parking
+      t.integer :add_break, default: 1
       
-
-
       t.timestamps null: false
     end
   end

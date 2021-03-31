@@ -7,10 +7,11 @@ class CreateBreaks < ActiveRecord::Migration[6.1]
       t.text :direction
       t.text :height
       t.text :water_level
-      t.integer :skill_level_required
+      t.integer :suggested_skill_level
       t.integer :shakas
       t.integer :user_id
       t.integer :beach_id
+      
       t.timestamps null: false
     end
   end
