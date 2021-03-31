@@ -1,10 +1,10 @@
 class BreaksController < ApplicationController
 
     def index
-        if params[:break]
+        if params[:direction]
             @breaks = Break.breaks_search(params[:direction])
         else
-        @breaks = Break.all
+            @breaks = Break.all
         end
     end
     
@@ -22,11 +22,12 @@ class BreaksController < ApplicationController
     def create 
         @break = Break.create(break_params)
         @break.user = current_user
+        @beaches = Beach.all 
         if params[:beach_id]
             @break.beach_id = params[:beach_id]
         end
         if @break.save
-        redirect_to beaches_path
+        redirect_to breaks_path
         else
             render :new
         end

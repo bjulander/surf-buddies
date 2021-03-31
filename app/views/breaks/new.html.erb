@@ -4,17 +4,31 @@
     <h2> <%= @beach.name %></h2>
 <%end%>
 
-
 <%= form_for(@break, url: form_url_helper(@beach)) do |f| %>
-    <%= f.label "Break Name:" %>
-    <%=f.text_field:name %>
-    <%= %>
-    <%= %>
-    <%= %>
+    <%=f.label "Location" %>
+    <%=f.text_field :location %><p>
+    <%=f.label "Name" %>
+    <%=f.text_field :name %><p>
+    <%=f.label "Break Type" %>
+    <%=f.text_field :break_type %><p>
+    <%=f.label "Direction" %>
+    <%=f.text_field :direction %><p>
+    <%=f.label "Height" %>
+    <%=f.text_field :height %><p>
+    <%=f.label "Water Level" %>
+    <%=f.text_field :water_level %><p>
+    <%=f.label "Suggested Skill Level" %>
+    <%=f.radio_button :suggested_skill_level, 1 %>Kooks Welcome<%=f.radio_button :suggested_skill_level, 2 %>Easy<%=f.radio_button :suggested_skill_level, 3 %>Average<%=f.radio_button :suggested_skill_level, 4 %>Experience Needed<%=f.radio_button :suggested_skill_level, 5 %>Almost Pro<p>
+    <%=f.label "Shakas" %>
+    <%=f.radio_button :shakas, 1 %>1<%=f.radio_button :shakas, 2 %>2<%=f.radio_button :shakas, 3 %>3<%=f.radio_button :shakas, 4 %>4<%=f.radio_button :shakas, 5 %>5<p>
     <%if !@beach%>
-        <%=f.label "Beach"%>
-            <%=f.label "Name" %>
-            <%=f.collection_select(:beach_id, @beaches, :id, :name) %>
-        <%=end %>
-    <%=f.submit "Submit" %>
-<%=end%>
+        <%=f.label :beach_id, "Beach"%>
+        <%=f.text_field :beach_id, list: "beach_list"%>
+        <datalist id="beach_list">
+            <% @beaches.each do |n| %>
+            <option value="<%= n.id%>"></option>
+            <%end%>
+            </datalist>
+        <%end %>
+    <%= f.submit "Submit" %>
+<%end%>

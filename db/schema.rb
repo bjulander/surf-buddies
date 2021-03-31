@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
     t.text "street"
     t.text "city"
     t.text "parking"
-    t.integer "add_break", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

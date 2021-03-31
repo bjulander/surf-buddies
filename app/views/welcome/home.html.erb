@@ -5,7 +5,7 @@
   <h1> Welcome</h1>
   <p>You were signed in by <%= session[:omniauth_data]['provider'] %></p> 
 <% else %>
-  <h1>Hmmm... No account located.</h1>
+  <h3>Hmmm... No account located.</h3>
   <p><%= link_to "Log In", login_path%><p>
   <p>Create an account <%=link_to 'Here', '/signup'%>.</p>
   <p> or </p>

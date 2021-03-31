@@ -1,8 +1,8 @@
 <h1>Search Breaks</h1>
 
-<%= form_with url: breaks_path, method: :get, scope: "break" do |f| %>
+<%= form_with url: breaks_path, method: :get do |f| %>
     <%= f.text_field :direction %>
     <%= f.submit "Search" %>
     <%end%>
 
-<%= render(partial: "breaks", locals: {breaks: @breaks, index: true})%>
+<%= render(partial: "breaks", locals: {breaks: @breaks})%>

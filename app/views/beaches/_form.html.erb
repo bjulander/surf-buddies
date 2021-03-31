@@ -9,27 +9,23 @@
     <%=f.text_field :city %><p>
     <%=f.label "Parking" %>
     <%=f.text_field :parking %><p>
-    <%=f.label "Add a new break?" %>
-    <%=f.radio_button :add_break, 1%>No<%=f.radio_button :add_break, 2%>Yes<p>
-        <%=f.fields_for :breaks, @breaks do |b| %>
-            <%=b.label "Location" %>
-            <%=b.text_field :location %><p>
-            <%=b.label "Name" %>
-            <%=b.text_field :name %><p>
-            <%=b.label "Break Type" %>
-            <%=b.text_field :break_type %><p>
-            <%=b.label "Direction" %>
-            <%=b.text_field :direction %><p>
-            <%=b.label "Height" %>
-            <%=b.text_field :height %><p>
-            <%=b.label "Water Level" %>
-            <%=b.text_field :water_level %><p>
-            <%=b.label "Suggested Skill Level" %>
-            <%=b.radio_button :suggested_skill_level, 1%><p>
-            <%=b.label "Shakas" %>
-            <%=b.radio_button :shakas, 1 %><p>
-            <%=b.label "Beach" %>
-            <%=b.radio_button :beach_id, 1 %><p>
-            <%end%>
+    <%=f.fields_for :breaks, @breaks do |b| %>
+        <%=b.label "Location" %>
+        <%=b.text_field :location %><p>
+        <%=b.label "Name" %>
+        <%=b.text_field :name %><p>
+        <%=b.label "Break Type" %>
+        <%=b.text_field :break_type %><p>
+        <%=b.label "Direction" %>
+        <%=b.text_field :direction %><p>
+        <%=b.label "Height" %>
+        <%=b.text_field :height %><p>
+        <%=b.label "Water Level" %>
+        <%=b.text_field :water_level %><p>
+        <%=b.label "Suggested Skill Level" %>
+        <%=b.radio_button :suggested_skill_level, 1 %>Kooks Welcome<%=b.radio_button :suggested_skill_level, 2 %>Easy<%=b.radio_button :suggested_skill_level, 3 %>Average<%=b.radio_button :suggested_skill_level, 4 %>Experience Needed<%=b.radio_button :suggested_skill_level, 5 %>Almost Pro<p>
+        <%=b.label "Shakas" %>
+        <%=b.radio_button :shakas, 1 %>1<%=b.radio_button :shakas, 2 %>2<%=b.radio_button :shakas, 3 %>3<%=b.radio_button :shakas, 4 %>4<%=b.radio_button :shakas, 5 %>5<p>
+        <%end%>
     <%=f.submit "Submit" %>
 <%end%>

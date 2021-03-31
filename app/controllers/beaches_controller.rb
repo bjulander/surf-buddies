@@ -51,7 +51,7 @@ class BeachesController < ApplicationController
     private 
 
     def beach_params
-        params.require(:beach).permit(:name, breaks_attributes: [:name, :user_id, :id])
+        params.require(:beach).permit(:name, :street, :parking, :city, breaks_attributes: [:name, :user_id, :id, :location, :beach_id, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas])
     end
 
     def set_beach
