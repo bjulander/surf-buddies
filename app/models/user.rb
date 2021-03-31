@@ -8,6 +8,6 @@ class User < ApplicationRecord
     validates_uniqueness_of :username
 
 
-    accepts_nested_attributes_for :breaks
+    #accepts_nested_attributes_for :breaks
 
 end

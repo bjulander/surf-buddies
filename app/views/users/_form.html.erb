@@ -2,7 +2,7 @@
 
 <%= render(partial: "application/errors", locals: {errors: @user.errors.full_messages})%>
 
-<%= form_for @user, url: signup_path(@user) do |f| %>
+<%= form_for @user, url: form_user_helper(@user) do |f| %>
     <%= f.label "Username" %>
     <%=f.text_field :username %><p>
     <%=f.label "Password" %>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    skip_before_action :verified_user, only: [:new, :create]    
+    skip_before_action :verified_user, only: [:new, :create]   
+    before_action :set_user, except: [:new, :create] 
 
     def new
         @user = User.new
@@ -15,6 +16,15 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+      if @user.update(user_params)
+          redirect_to user_path(@user)
+      else
+          render :edit
+      end
+  end
+
+
     def destroy
       @user.delete
       redirect_to root_path
@@ -25,6 +35,10 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:username, :password, :password_confirmation)
+    end
+
+    def set_user
+      @user = current_user
     end
     
 end

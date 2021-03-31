@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :verified_user, :redirect_if_not_owner
+  before_action :verified_user
 
   helper_method :current_user
 
@@ -12,11 +12,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user = User.find_by(id: session[:user_id])
+    User.find_by(id: session[:user_id])
   end
 
-  def redirect_if_not_owner(object)
-    current_user.id != params[:object][:user_id]
-  end
+  # def owner
+  #   if current_user != User.find_by_id(params[:user_id])
+  #     redirect_to "/"
+  #   end
+  # end
+
 
 end

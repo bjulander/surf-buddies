@@ -1,5 +1,5 @@
 class BreaksController < ApplicationController
-    skip_before_action :redirect_if_not_owner, only: [:index, :show]
+    #skip_before_action :owner, only: [:index, :show]
     before_action(:set_break, except: [:index, :new, :create])
 
     def index
