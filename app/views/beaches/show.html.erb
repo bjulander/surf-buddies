@@ -1,0 +1,9 @@
+<h1> Beach Show Page </h1>
+
+<p> <%= @beach.name %> </p>
+
+<%= render "breaks/breaks", locals: {breaks: @beach.breaks, index: true}) %>
+
+<%= link_to "Edit", edit_beach_path(@beach) %>
+
+<%=button_to("Delete", @beach, method: :delete, data: {confirm: "Are you sure?"}) %>

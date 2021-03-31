@@ -1,6 +1,6 @@
 <h1> Log In</h1>
 
-<%= render(partial: "application/errors", locals: {errors: @errors})%>
+<%= render(partial: "application/errors", locals: {errors: @})%>
 
 <%= form_tag login_path do %>
 
@@ -14,4 +14,7 @@
   <% end %> 
 
   <p><div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div></p>
+  <p><%= link_to ' with Facebook', '/auth/facebook'%>.</p>
   <p>Log In <%= link_to ' with Google', '/auth/google_oauth2'%>.</p>
+
+  
