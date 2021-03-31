@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  before_action :verified_user
+  before_action :verified_user, :redirect_if_not_owner
 
-  helper_method(:current_user, :user_errors)
+  helper_method :current_user
 
   def verified_user
     redirect_to '/' unless authenticated_user
@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user = User.find_by(id: session[:user_id])
   end
+
+  def redirect_if_not_owner(object)
+    current_user.id != params[:object][:user_id]
+  end
+
 end

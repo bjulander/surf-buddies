@@ -1,6 +1,4 @@
-<% @beaches.each do |b| %>
+<% all_beaches.each do |b| %>
   <ul>
    <li><%= link_to(b.name, beach_path(b))%></li>
-
-    
    <%end%>

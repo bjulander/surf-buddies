@@ -1,4 +1,5 @@
 class BeachesController < ApplicationController
+    skip_before_action :redirect_if_not_owner, only: [:index, :show]
 
     before_action(:set_beach, except: [:index, :new, :create])
     
@@ -6,8 +7,6 @@ class BeachesController < ApplicationController
         if params[:user_id]
             user = User.find_by(id: params[:user_id])
             @beaches = user.beaches
-        else
-            @beaches = Beach.all
         end
     end
 

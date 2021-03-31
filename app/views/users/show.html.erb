@@ -1,3 +1,4 @@
 <h1>User Show Page <%=current_user.username%></h1>
 
 <%= button_to "Log Out",  logout_path, method: :post%>
+<%=button_to("Delete", @user, method: :delete, data: {confirm: "Are you sure?"}) %>

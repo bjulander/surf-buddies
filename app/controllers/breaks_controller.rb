@@ -1,4 +1,6 @@
 class BreaksController < ApplicationController
+    skip_before_action :redirect_if_not_owner, only: [:index, :show]
+    before_action(:set_break, except: [:index, :new, :create])
 
     def index
         if params[:direction]
@@ -12,17 +14,17 @@ class BreaksController < ApplicationController
         if params[:beach_id]
             @beach = Beach.find_by(id: params[:beach_id])
             @breaks = @beach.breaks.build
-            @beaches = Beach.all
         else 
             @break = Break.new
-            @beaches = Beach.all 
         end
+    end
+
+    def edit
     end
 
     def create 
         @break = Break.create(break_params)
-        @break.user = current_user
-        @beaches = Beach.all 
+        @break.user = current_user 
         if params[:beach_id]
             @break.beach_id = params[:beach_id]
         end
@@ -33,10 +35,19 @@ class BreaksController < ApplicationController
         end
     end
 
+    def destroy
+        @break.delete
+        redirect_to breaks_path
+    end
+
     private
 
     def break_params
         params.require(:break).permit(:location, :name, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas, :beach_id, :user_id)
+    end
+
+    def set_break
+        @break = Break.find_by(id: params[:id])
     end
 
 end
