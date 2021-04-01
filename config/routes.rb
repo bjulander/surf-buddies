@@ -6,11 +6,16 @@ resources (:users) do
   resources :beaches
 end 
 
+resources (:users) do 
+  resources :profiles
+end 
+
 resources (:beaches) do 
   resources :breaks 
 end
 
 resources :breaks
+resources :profiles
 
 get '/signup', to: "users#new", as: "signup"
 post '/signup', to: "users#create"

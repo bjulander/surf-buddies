@@ -1,0 +1,14 @@
+
+
+
+<%= form_for @profile do |f| %>
+    <%=f.label "Private Account?" %>
+    <%=f.text_field :private %><p>
+    <%=f.label "Phone Number" %>
+    <%=f.text_field :phone_number %><p>
+    <%=f.label "Location" %>
+    <%=f.text_field :location %><p>
+    <%=f.label "Skill Level" %>
+    <%=f.radio_button :skill_level, "Almost Kook" %>Almost Kook<%=f.radio_button :skill_level, "Catchin Waves" %>Catchin Waves<%=f.radio_button :skill_level, "Nothin Fancy" %>Nothin Fancy<%=f.radio_button :skill_level, "A Little Flair" %>A Little Flair<%=f.radio_button :skill_level, "Basically Pro" %>Basically Pro<p>
+    <%=f.submit "Sign Up" %>
+<%end%>

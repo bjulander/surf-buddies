@@ -1,6 +1,10 @@
 <h1> Beach Show Page </h1>
 
-<%= @beach.name %>
+<h3><%= @beach.name %></h3>
+<h5>
+<%= @beach.street %>
+<%= @beach.city %>
+<%= @beach.parking %><h/5>
 <%= render(partial: "breaks/breaks", locals: {breaks: @beach.breaks}) %>
 
 <%= link_to "Edit", edit_beach_path(@beach) %>

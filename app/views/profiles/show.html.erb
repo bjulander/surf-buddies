@@ -1,0 +1,14 @@
+<h1> Show Profile </h1>
+
+<p><label> Private: <%= @profile.private%></label></p>
+<p><label> Phone Number: <%= @profile.phone_number%></label></p>
+<p><label> Location: <%= @profile.location%></label></p>
+<p><label> Skill Level: <%= @profile.skill_level%></label></p>
+
+
+
+
+
+
+
+<%= link_to "Edit", edit_profile_path(@profile) %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_200452) do
+ActiveRecord::Schema.define(version: 2021_03_31_233231) do
 
   create_table "beaches", force: :cascade do |t|
     t.text "name"
@@ -28,10 +28,20 @@ ActiveRecord::Schema.define(version: 2021_03_27_200452) do
     t.text "direction"
     t.text "height"
     t.text "water_level"
-    t.integer "suggested_skill_level"
+    t.text "suggested_skill_level"
     t.integer "shakas"
     t.integer "user_id"
     t.integer "beach_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.text "private", default: "Yes"
+    t.text "phone_number", default: "N/A"
+    t.text "location", default: "N/A"
+    t.text "skill_level", default: "Kook"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

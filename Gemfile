@@ -11,6 +11,11 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'thin'
 
+gem 'bootstrap', '~> 5.0.0.beta2'
+gem 'sprockets-rails'
+gem 'jquery-rails'
+
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
