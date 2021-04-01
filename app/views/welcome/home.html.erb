@@ -1,15 +1,19 @@
 <h1>Welcome to Surf Buddies</h1>
 
-
-<% if name = session[:name] %>
-  <h1> Welcome</h1>
-  <p>You were signed in by <%= session[:omniauth_data]['provider'] %></p> 
+<br>
+<% if current_user %>
+<%= link_to "My Account", user_path(current_user) %>
 <% else %>
-  <h3>Hmmm... No account located.</h3>
   <p><%= link_to "Log In", login_path%><p>
   <p>Create an account <%=link_to 'Here', '/signup'%>.</p>
   <p> or </p>
   <p>Sign up <%= link_to ' with Google', '/auth/google_oauth2'%>.</p>
-  <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+  <div><a
+  class="fb-login-button" href="<%'/auth/facebook'%>"
+    data-width="" data-size="medium" 
+    data-button-type="login_with" 
+    data-layout="rounded" 
+    data-auto-logout-link="false" 
+    data-use-continue-as="true"><a/></div>
   <p>Sign up <%= link_to ' with Facebook', '/auth/facebook'%>.</p>
 <% end %>

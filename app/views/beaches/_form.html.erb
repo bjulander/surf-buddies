@@ -1,8 +1,8 @@
 
 
-<%= form_for(@beach) do |f| %>
-    <%= f.label("Beach Name:") %>
-    <%=f.text_field(:name) %><p>
+<%= form_for @beach do |f| %>
+    <%=f.label "Beach Name:" %>
+    <%=f.text_field :name %><p><p>
     <%=f.label "Street Address" %>
     <%=f.text_field :street %><p>
     <%=f.label "City" %>
@@ -23,9 +23,9 @@
         <%=b.label "Water Level" %>
         <%=b.text_field :water_level %><p>
         <%=b.label "Suggested Skill Level" %>
-        <%=b.radio_button :suggested_skill_level, Kooks Welcome %>Kooks Welcome<%=b.radio_button :suggested_skill_level, Easy %>Easy<%=b.radio_button :suggested_skill_level, Average %>Average<%=b.radio_button :suggested_skill_level, Experience Needed %>Experience Needed<%=b.radio_button :suggested_skill_level, Almost Pro %>Almost Pro<p>
+        <%=b.radio_button :suggested_skill_level, "Kooks Welcome" %> Kooks Welcome <%=b.radio_button :suggested_skill_level, "Easy" %> Easy <%=b.radio_button :suggested_skill_level, "Average" %> Average <%=b.radio_button :suggested_skill_level, "Experience Needed" %> Experience Needed <%=b.radio_button :suggested_skill_level, "Almost Pro" %> Almost Pro <p>
         <%=b.label "Shakas" %>
-        <%=b.radio_button :shakas, 1 %>1<%=b.radio_button :shakas, 2 %>2<%=b.radio_button :shakas, 3 %>3<%=b.radio_button :shakas, 4 %>4<%=b.radio_button :shakas, 5 %>5<p>
+        <%=b.radio_button :shakas, 1 %> 1 <%=b.radio_button :shakas, 2 %> 2 <%=b.radio_button :shakas, 3 %> 3 <%=b.radio_button :shakas, 4 %> 4 <%=b.radio_button :shakas, 5 %> 5 <p>
         <%end%>
     <%=f.submit "Submit" %>
 <%end%>

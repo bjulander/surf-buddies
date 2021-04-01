@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2021_03_31_233231) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.text "private", default: "Yes"
+    t.text "private_account", default: "Yes"
     t.text "phone_number", default: "N/A"
     t.text "location", default: "N/A"
-    t.text "skill_level", default: "Kook"
+    t.text "skill_level", default: "Almost Kook"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

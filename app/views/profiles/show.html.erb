@@ -1,14 +1,14 @@
-<h1> Show Profile </h1>
+<h1> Show Profile </h1><p>
 
-<p><label> Private: <%= @profile.private%></label></p>
-<p><label> Phone Number: <%= @profile.phone_number%></label></p>
-<p><label> Location: <%= @profile.location%></label></p>
-<p><label> Skill Level: <%= @profile.skill_level%></label></p>
+<% if !@profile %>
+    <h5>Hmmm... looks like we dont have any info for you.</h5>
+    <%= link_to "Create a Profile", new_profile_path %>
+<%else%>
+    <p><label> Private: <%= @profile.private_account%></label></p>
+    <p><label> Phone Number: <%= @profile.phone_number%></label></p>
+    <p><label> Location: <%= @profile.location%></label></p>
+    <p><label> Skill Level: <%= @profile.skill_level%></label></p>
+    <%= link_to "Edit", edit_profile_path(@profile) %><p>
 
-
-
-
-
-
-
-<%= link_to "Edit", edit_profile_path(@profile) %>
+    <%=button_to("Delete", @profile, method: :delete, data: {confirm: "Are you sure?"}) %>
+<%end%>

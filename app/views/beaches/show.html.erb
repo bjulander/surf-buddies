@@ -1,12 +1,11 @@
 <h1> Beach Show Page </h1>
 
-<h3><%= @beach.name %></h3>
-<h5>
-<%= @beach.street %>
-<%= @beach.city %>
-<%= @beach.parking %><h/5>
-<%= render(partial: "breaks/breaks", locals: {breaks: @beach.breaks}) %>
+<h3><%=@beach.name %></h3>
+<%= @beach.street %><p><p>
+<%= @beach.city %><p>
+<%= @beach.parking %><p>
+<%= render(partial: "breaks/breaks", locals: {breaks: @beach.breaks}) %><p><p>
 
-<%= link_to "Edit", edit_beach_path(@beach) %>
+<%= link_to "Edit", edit_beach_path(@beach) %><p><p>
 
 <%=button_to("Delete", @beach, method: :delete, data: {confirm: "Are you sure?"}) %>

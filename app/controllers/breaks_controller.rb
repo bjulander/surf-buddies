@@ -19,9 +19,6 @@ class BreaksController < ApplicationController
         end
     end
 
-    def edit
-    end
-
     def create 
         @break = Break.create(break_params)
         @break.user = current_user 
@@ -29,9 +26,21 @@ class BreaksController < ApplicationController
             @break.beach_id = params[:beach_id]
         end
         if @break.save
-        redirect_to breaks_path
+            redirect_to breaks_path
         else
             render :new
+        end
+    end
+
+    def edit
+        #owner(set_break)
+    end
+
+    def update
+        if @break.update(break_params)
+            redirect_to(break_path(@break))
+        else 
+            render :edit
         end
     end
 

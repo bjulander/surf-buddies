@@ -7,7 +7,7 @@ resources (:users) do
 end 
 
 resources (:users) do 
-  resources :profiles
+  resources :breaks
 end 
 
 resources (:beaches) do 

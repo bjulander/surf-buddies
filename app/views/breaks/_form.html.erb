@@ -1,13 +1,13 @@
 
 
 
-<% if @beach %>
-    <h2> <%= @beach.name %></h2>
+<% if @break.beach %>
+    <h2> Break at <%= @break.beach.name %></h2>
 <%end%>
 
-<%= form_for(@break, url: form_url_helper(@beach)) do |f| %>
+<%= form_for(@break, url: form_url_helper(@break.beach)) do |f| %>
     <%=f.label "Location" %>
-    <%=f.text_field :location %><p>
+    <%=f.text_field :location %><p><p>
     <%=f.label "Name" %>
     <%=f.text_field :name %><p>
     <%=f.label "Break Type" %>
@@ -19,10 +19,10 @@
     <%=f.label "Water Level" %>
     <%=f.text_field :water_level %><p>
     <%=f.label "Suggested Skill Level" %>
-    <%=f.radio_button :suggested_skill_level, "Kooks Welcome" %>Kooks Welcome<%=f.radio_button :suggested_skill_level, "Easy" %>Easy<%=f.radio_button :suggested_skill_level, "Average" %>Average<%=f.radio_button :suggested_skill_level, "Experience Needed" %>Experience Needed<%=f.radio_button :suggested_skill_level, "Almost Pro" %>Almost Pro<p>
+    <%=f.radio_button :suggested_skill_level, "Kooks Welcome" %> Kooks Welcome <%=f.radio_button :suggested_skill_level, "Easy" %> Easy <%=f.radio_button :suggested_skill_level, "Average" %> Average <%=f.radio_button :suggested_skill_level, "Experience Needed" %> Experience Needed <%=f.radio_button :suggested_skill_level, "Almost Pro" %> Almost Pro <p>
     <%=f.label "Shakas" %>
-    <%=f.radio_button :shakas, 1 %>1<%=f.radio_button :shakas, 2 %>2<%=f.radio_button :shakas, 3 %>3<%=f.radio_button :shakas, 4 %>4<%=f.radio_button :shakas, 5 %>5<p>
-    <%if !@beach%>
+    <%=f.radio_button :shakas, 1 %> 1 <%=f.radio_button :shakas, 2 %> 2 <%=f.radio_button :shakas, 3 %> 3 <%=f.radio_button :shakas, 4 %> 4 <%=f.radio_button :shakas, 5 %> 5 <p>
+    <%if !@break.beach%>
         <%=f.label :beach_id, "Beach"%>
         <%=f.text_field :beach_id, list: "beach_list"%>
         <datalist id="beach_list">

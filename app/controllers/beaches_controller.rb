@@ -3,10 +3,7 @@ class BeachesController < ApplicationController
     before_action(:set_beach, except: [:index, :new, :create])
     
     def index
-        if params[:user_id]
-            user = User.find_by(id: params[:user_id])
-            @beaches = user.beaches
-        end
+        @beaches = current_user.beaches
     end
 
     def show

@@ -12,5 +12,7 @@
     <%=f.submit "Sign Up" %>
 <%end%>
 
-<%= link_to "Sign Up with Google.", '/auth/google_oauth2'%><br><br>
-<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+
+  <p>Sign up <%= link_to ' with Google', '/auth/google_oauth2'%>.</p>
+  <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+  <p>Sign up <%= link_to ' with Facebook', '/auth/facebook'%>.</p>

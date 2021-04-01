@@ -3,10 +3,8 @@
 
 
 
-
-<%= link_to "Update Profile", new_profile_path %>
+<%= link_to "Update Profile", profile_path %>
 <%= link_to "Edit", edit_user_path(current_user) %>
 
 
-<%= button_to "Log Out",  logout_path, method: :post%>
 <%=button_to("Delete", @user, method: :delete, data: {confirm: "Are you sure?"}) %>
