@@ -3,11 +3,9 @@ class BeachesController < ApplicationController
     
     def index
         if params[:name]
-            binding.pry
             @beaches = Beach.beaches_search(params[:name])
         else
             @beaches = Beach.all
-            binding.pry
         end
     end
 

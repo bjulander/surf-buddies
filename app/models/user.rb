@@ -6,7 +6,6 @@ class User < ApplicationRecord
     has_secure_password
     validates_presence_of :username
     validates_uniqueness_of :username
-
-
+    
     accepts_nested_attributes_for :breaks
 end

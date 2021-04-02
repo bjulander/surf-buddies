@@ -3,6 +3,7 @@ class Break < ApplicationRecord
     belongs_to :beach
 
     validates_presence_of :name, :location, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas
+    before_validation :title_case
 
     #scope(:breaks_search, ->(direction, shakas) {self.where(["direction = ?", direction], ["shakas = ?", shakas])}
     scope(:breaks_search, ->(direction) {self.where("direction = ?", direction)})
@@ -14,6 +15,10 @@ class Break < ApplicationRecord
 
     def beach_name
         self.beach ? self.beach.name : nil 
+    end
+
+    def title_case
+        self.name = self.name.titlecase
     end
 
 
