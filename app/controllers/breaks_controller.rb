@@ -38,6 +38,7 @@ class BreaksController < ApplicationController
     def update
         if @break.update(break_params)
             redirect_to (break_path(@break))
+            flash[:message] = "update successful"
         else 
             render :edit
         end
