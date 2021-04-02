@@ -1,6 +1,5 @@
 class ProfilesController < ApplicationController   
-
-  before_action(:profile_user, :set_profile, except: [:index, :new, :create])
+  before_action( :set_profile, except: [:index, :new, :create])
 
   def new
     if current_user.profile
@@ -41,9 +40,9 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:private_account, :phone_number, :location, :skill_level, :user_id)
   end
 
-  def profile_user
-    @user = current_user
-  end
+  # def profile_user
+  #   @user = current_user
+  # end
 
   def set_profile
     @profile = Profile.find_by(id: params[:id])
