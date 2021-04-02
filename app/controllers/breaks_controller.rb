@@ -1,5 +1,4 @@
 class BreaksController < ApplicationController
-    #skip_before_action :owner, only: [:index, :show]
     before_action(:set_break, except: [:index, :new, :create])
 
     def index
@@ -26,7 +25,6 @@ class BreaksController < ApplicationController
             @break.beach_id = params[:beach_id]
         end
         if @break.save
-            binding.pry
             redirect_to breaks_path
         else
             render :new

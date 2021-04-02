@@ -2,7 +2,13 @@ class BeachesController < ApplicationController
     before_action :set_beach, except: [:index, :new, :create]
     
     def index
-        @beaches = current_user.beaches
+        if params[:name]
+            binding.pry
+            @beaches = Beach.beaches_search(params[:name])
+        else
+            @beaches = Beach.all
+            binding.pry
+        end
     end
 
     def show

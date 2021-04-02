@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-    def all_beaches
-        Beach.all
+    def my_beaches
+        current_user.beaches
     end
 
     def current_user

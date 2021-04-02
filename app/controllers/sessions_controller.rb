@@ -29,25 +29,30 @@ class SessionsController < ApplicationController
         @user = User.create(username: outside_auth['info']['email']) do |u|
         u.password = SecureRandom.hex(13)
        end
-        if @user.save
-          session[:user_id] = @user.id
-          redirect_to user_path(@user)
-          
-        else
-          redirect_to signup_path
-        end
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to edit_user_path(@user)
+      else
+        redirect_to signup_path
       end
+    end
   end
 
   def create_with_g
-    user = User.find_or_create_by(username: outside_auth['info']['email']) do |u|
-      u.password = SecureRandom.hex(13)
-    end
-    if user.save || user.id
-      session[:user_id] = user.id
-      redirect_to user_path(user)
-    else
-      redirect_to signup_path
+    @user = User.find_by(username: outside_auth['info']['email'])
+      if @user
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+      else
+        @user = User.create(username: outside_auth['info']['email']) do |u|
+        u.password = SecureRandom.hex(13)
+      end
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to edit_user_path(@user)
+      else
+        redirect_to signup_path
+      end
     end
   end
 

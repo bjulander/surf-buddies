@@ -1,14 +1,20 @@
-<h1> Add search </h1>
+
 
   <h2>Favorite Beaches</h2>
-   <ul><% @beaches.each do |b| %></ul>
+   <ul><% my_beaches.each do |b| %></ul>
       <li><%= link_to(b.name, beach_path(b))%></li>
    <%end%>
    <%= link_to "Add new beach?", new_beach_path%>
    
 <p>
 
-      <h3> All Beaches </h4>
-      <% all_beaches.each do |b| %>
-    <li><%= link_to(b.name, beach_path(b))%></li>
+   <h6> Search All Beaches </h6>
+   <%= form_with url: beaches_path, method: :get do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit "Search" %>
+   <%end%>
+
+
+   <% @beaches.each do |b| %>
+   <li><%= link_to(b.name, beach_path(b))%></li>
 <%end%>

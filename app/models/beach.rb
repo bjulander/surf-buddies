@@ -5,4 +5,6 @@ class Beach < ApplicationRecord
     validates_uniqueness_of :name
 
     accepts_nested_attributes_for :breaks
+
+    scope(:beaches_search, ->(name) {self.where("name = ?", name)})
 end
