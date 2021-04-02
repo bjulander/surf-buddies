@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
 
   def new
     if current_user.profile
-      redirect_to current_user.profile
+      redirect_to user_profile_path(current_user, current_user.profile.user_id)
     else
       @profile = Profile.new
     end
@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to profile_path(@profile)
+      redirect_to user_profile_path(current_user, @profile.user_id)
     else
       render :new
     end
@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-        redirect_to profile_path(@profile)
+        redirect_to user_profile_path(current_user, @profile.user_id)
     else
         render :edit
     end

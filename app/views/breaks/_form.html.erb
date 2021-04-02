@@ -4,7 +4,7 @@
 <% if @break.beach %>
     <h2> Break at <%= @break.beach.name %></h2>
 <%end%>
-
+<h5> Add a new break </h5>
 <%= form_for(@break, url: form_url_helper(@break.beach)) do |f| %>
     <%=f.label "Location" %>
     <%=f.text_field :location%><p><p>
@@ -30,8 +30,6 @@
             <option value="<%=b.name%>">
             <%end%>
             </datalist><p>
-            <h6>Beach not listed?</h6>
-            <textarea name="break[beach_name]"></textarea>
         <%end %><p>
     <%= f.submit "Submit" %>
 <%end%>

@@ -2,14 +2,14 @@
 
 <% if !@profile %>
     <h5>Hmmm... looks like we dont have any info for you.</h5>
-    <%= link_to "Create a Profile", new_profile_path %>
+    <%= link_to "Create a Profile", new_user_profile_path %>
 <%else%>
     <p><label> Private: <%= @profile.private_account%></label></p>
     <p><label> Phone Number: <%= @profile.phone_number%></label></p>
     <p><label> Location: <%= @profile.location%></label></p>
     <p><label> Skill Level: <%= @profile.skill_level%></label></p>
     
-    <%= link_to "Edit", edit_profile_path(@profile) %><p>
+    <%= link_to "Edit", edit_user_profile_path(@profile) %><p>
 
-    <%=button_to("Delete", @profile, method: :delete, data: {confirm: "Are you sure?"}) %>
+    <%=button_to("Delete", user_profile_path(@profile), method: :delete, data: {confirm: "Are you sure?"}) %>
 <%end%>

@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2021_03_31_233231) do
     t.integer "shakas"
     t.integer "user_id"
     t.integer "beach_id"
-    t.text "beach_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

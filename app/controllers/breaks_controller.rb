@@ -20,7 +20,6 @@ class BreaksController < ApplicationController
     end
 
     def create 
-        binding.pry
         @break = Break.create(break_params)
         @break.user = current_user 
         if params[:beach_id]
@@ -34,7 +33,7 @@ class BreaksController < ApplicationController
     end
 
     def edit
-        owner(set_break)
+        break_owner
     end
 
     def update
@@ -46,6 +45,7 @@ class BreaksController < ApplicationController
     end
 
     def destroy
+        break_owner
         @break.delete
     end
 

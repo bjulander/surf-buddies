@@ -14,8 +14,11 @@ resources (:beaches) do
   resources :breaks 
 end
 
+resources (:users) do 
+  resources :profiles
+end 
 resources :breaks
-resources :profiles
+#resources :profiles
 
 get '/signup', to: "users#new", as: "signup"
 post '/signup', to: "users#create"

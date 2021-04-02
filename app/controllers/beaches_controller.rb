@@ -25,7 +25,6 @@ class BeachesController < ApplicationController
     end
 
     def edit
-        binding.pry
         @breaks = @beach.breaks.where(user_id: current_user.id)
     end
 

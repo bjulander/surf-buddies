@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
     User.find_by(id: session[:user_id])
   end
 
-  def owner(object)
-    if current_user != object.user
-      redirect_to "/"
+  def break_owner
+    if current_user != set_break.user
+      redirect_to breaks_path
     end
   end
 

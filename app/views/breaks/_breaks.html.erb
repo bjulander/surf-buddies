@@ -3,5 +3,5 @@
 
         
     <% breaks.each do |b| %>
-        <li> <%= link_to(b.name, break_path(b))%></li>
+        <li> <%= link_to(b.name, beach_break_path(b.beach, b))%></li>
     <%end%>

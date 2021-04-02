@@ -2,7 +2,7 @@
 <h6>This information is not required, but it helps us find new buddies!</h6><p>
 
 
-<%= form_for @profile do |f| %>
+<%= form_for @profile, url: form_profile_helper(current_user.profile) do |f| %>
     <%=f.label "Private Account?" %>
     <%=f.radio_button :private_account, "Yes" %>Yes<%=f.radio_button :private_account, "No" %>No<p><p>
     <%=f.label "Phone Number" %>
