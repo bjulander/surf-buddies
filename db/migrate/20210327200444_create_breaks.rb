@@ -11,6 +11,7 @@ class CreateBreaks < ActiveRecord::Migration[6.1]
       t.integer :shakas
       t.integer :user_id
       t.integer :beach_id
+      t.text :beach_name
       
       t.timestamps null: false
     end

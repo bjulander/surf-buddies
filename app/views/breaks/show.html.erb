@@ -2,13 +2,15 @@
 
 <h1><%= @break.name%></h1>
 <p><label> Location: <%= @break.location%></label></p>
-<p><label> Beach: <%=@break.beach.name %></label></p>
+<p><label> Beach: <%=@break.beach_name %></label></p>
 <p><label> Break: <%= @break.break_type%></label></p>
 <p><label> Direction: <%= @break.direction%></label></p>
 <p><label> Height: <%= @break.height%></label></p>
 <p><label> Water Level: <%= @break.water_level%></label></p>
 <p><label> Suggested Skill: <%= @break.suggested_skill_level%></label></p>
 <p><label> Shakas: <%= @break.shakas%></label></p>
-<%= link_to "Edit", edit_break_path(@break) %>
+<% if @break.user_id == current_user.id %>
+    <%= link_to "Edit", edit_break_path(@break) %>
+<%end%>
 <p>
 <%=button_to("Delete", @break, method: :delete, data: {confirm: "Are you sure?"}) %>

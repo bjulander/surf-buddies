@@ -1,10 +1,13 @@
-<h1>Search Breaks</h1>
-
-<%= form_with url: breaks_path, method: :get do |f| %>
+    <h4>Favorite Breaks</h4>
+   <% current_user.breaks.each do |b| %>
+      <li><%= link_to(b.name, break_path(b))%></li>
+   <%end%><p>
+   <%= link_to "Add new break?", new_break_path%>
+<p><br>
+<h4> Search Breaks </h4>
+   <%= form_with url: breaks_path, method: :get do |f| %>
     <%= f.text_field :direction %>
     <%= f.submit "Search" %>
     <%end%>
-
-
-
 <%= render(partial: "breaks", locals: {breaks: @breaks})%>
+

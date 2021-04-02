@@ -15,13 +15,10 @@ class ApplicationController < ActionController::Base
     User.find_by(id: session[:user_id])
   end
 
-
-
   def owner(object)
     if current_user != object.user
       redirect_to "/"
     end
   end
-
 
 end

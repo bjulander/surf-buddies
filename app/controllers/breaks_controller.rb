@@ -20,6 +20,7 @@ class BreaksController < ApplicationController
     end
 
     def create 
+        binding.pry
         @break = Break.create(break_params)
         @break.user = current_user 
         if params[:beach_id]
@@ -33,7 +34,7 @@ class BreaksController < ApplicationController
     end
 
     def edit
-        #owner(set_break)
+        owner(set_break)
     end
 
     def update
@@ -46,13 +47,12 @@ class BreaksController < ApplicationController
 
     def destroy
         @break.delete
-        redirect_to breaks_path
     end
 
     private
 
     def break_params
-        params.require(:break).permit(:location, :name, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas, :beach_id, :user_id)
+        params.require(:break).permit(:location, :name, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas, :beach_name, :beach_id, :user_id)
     end
 
     def set_break

@@ -7,7 +7,7 @@
 
 <%= form_for(@break, url: form_url_helper(@break.beach)) do |f| %>
     <%=f.label "Location" %>
-    <%=f.text_field :location %><p><p>
+    <%=f.text_field :location%><p><p>
     <%=f.label "Name" %>
     <%=f.text_field :name %><p>
     <%=f.label "Break Type" %>
@@ -23,13 +23,15 @@
     <%=f.label "Shakas" %>
     <%=f.radio_button :shakas, 1 %> 1 <%=f.radio_button :shakas, 2 %> 2 <%=f.radio_button :shakas, 3 %> 3 <%=f.radio_button :shakas, 4 %> 4 <%=f.radio_button :shakas, 5 %> 5 <p>
     <%if !@break.beach%>
-        <%=f.label :beach_id, "Beach"%>
-        <%=f.text_field :beach_id, list: "beach_list"%>
-        <datalist id="beach_list">
-            <% all_beaches.each do |n| %>
-            <option value="<%=n.id%>"></option>
+        <%=f.label :beach_name, "Beach"%>
+        <%=f.text_field :beach_name, list: "beach_names"%>
+        <datalist id="beach_names">
+            <% all_beaches.each do |b| %>
+            <option value="<%=b.name%>">
             <%end%>
-            </datalist>
-        <%end %>
+            </datalist><p>
+            <h6>Beach not listed?</h6>
+            <textarea name="break[beach_name]"></textarea>
+        <%end %><p>
     <%= f.submit "Submit" %>
 <%end%>

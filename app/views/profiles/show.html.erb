@@ -8,6 +8,7 @@
     <p><label> Phone Number: <%= @profile.phone_number%></label></p>
     <p><label> Location: <%= @profile.location%></label></p>
     <p><label> Skill Level: <%= @profile.skill_level%></label></p>
+    
     <%= link_to "Edit", edit_profile_path(@profile) %><p>
 
     <%=button_to("Delete", @profile, method: :delete, data: {confirm: "Are you sure?"}) %>

@@ -9,11 +9,12 @@
     <%=f.text_field :city %><p>
     <%=f.label "Parking" %>
     <%=f.text_field :parking %><p>
+    <h5> Add a Surf Break </h5>
     <%=f.fields_for :breaks, @breaks do |b| %>
+        <%=b.label "Name" %>
+        <%=b.text_field :name %><p><p>
         <%=b.label "Location" %>
         <%=b.text_field :location %><p>
-        <%=b.label "Name" %>
-        <%=b.text_field :name %><p>
         <%=b.label "Break Type" %>
         <%=b.text_field :break_type %><p>
         <%=b.label "Direction" %>

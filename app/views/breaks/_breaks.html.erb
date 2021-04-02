@@ -5,5 +5,3 @@
     <% breaks.each do |b| %>
         <li> <%= link_to(b.name, break_path(b))%></li>
     <%end%>
-
-    <%= link_to "Add new break?", new_break_path%>

@@ -1,6 +1,5 @@
-class BeachesController < ApplicationController
-    #skip_before_action :owner, only: [:index, :show]
-    before_action(:set_beach, except: [:index, :new, :create])
+class BeachesController < ApplicationController 
+    before_action :set_beach, except: [:index, :new, :create]
     
     def index
         @beaches = current_user.beaches
@@ -26,6 +25,7 @@ class BeachesController < ApplicationController
     end
 
     def edit
+        binding.pry
         @breaks = @beach.breaks.where(user_id: current_user.id)
     end
 
@@ -46,7 +46,7 @@ class BeachesController < ApplicationController
     private 
 
     def beach_params
-        params.require(:beach).permit(:name, :street, :parking, :city, breaks_attributes: [:name, :user_id, :id, :location, :beach_id, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas])
+        params.require(:beach).permit(:name, :street, :parking, :city, breaks_attributes: [:name, :user_id, :id, :beach_name, :location, :beach_id, :break_type, :direction, :height, :water_level, :suggested_skill_level, :shakas])
     end
 
     def set_beach
