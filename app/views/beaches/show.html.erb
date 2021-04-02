@@ -6,8 +6,3 @@
 <%= @beach.parking %><p>
 <%= render(partial: "breaks/breaks", locals: {breaks: @beach.breaks}) %><p><p>
 <%= link_to "Add new break?", new_break_path%>
-<%binding.pry%>
-<%if current_user == @beach.users %>
-    <%= link_to "Edit", edit_beach_path(@beach) %><p><p>
-    <%=button_to("Delete", @beach, method: :delete, data: {confirm: "Are you sure?"}) %>
-<%end%>

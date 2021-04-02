@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
 
   def new
     if current_user.profile
-      redirect_to user_profile_path(current_user, current_user.profile.user_id)
+      @profile = current_user.profile
+      profile_show
     else
       @profile = Profile.new
     end
@@ -14,7 +15,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     if @profile.save
-      redirect_to user_profile_path(current_user, @profile.user_id)
+      profile_show
     else
       render :new
     end
@@ -22,16 +23,16 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-        redirect_to user_profile_path(current_user, @profile.user_id)
+      profile_show
     else
-        render :edit
+      render :edit
     end
   end
 
 
   def destroy
     @profile.delete
-    redirect_to 
+    redirect_to user_path(current_user)
   end
 
   private
@@ -45,7 +46,11 @@ class ProfilesController < ApplicationController
   end
 
   def set_profile
-      @profile = Profile.find_by(id: params[:id])
+    @profile = Profile.find_by(id: params[:id])
+  end
+
+  def profile_show
+    redirect_to user_profile_path(current_user, @profile)
   end
 
 end
