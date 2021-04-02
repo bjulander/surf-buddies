@@ -32,6 +32,7 @@
   <body>
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=1328368470860904&autoLogAppEvents=1" nonce="9aZ8Ct47"></script>
-    <%= yield %>
+  <%=flash[:message]%>  
+  <%= yield %>
   </body>
 </html>

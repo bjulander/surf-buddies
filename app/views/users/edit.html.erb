@@ -1,3 +1,10 @@
 <%= render(partial: "application/errors", locals: {errors: @user.errors.full_messages})%>
 
-<%= render 'form' %> 
+<h5> Update Password </h5>
+<%= form_for @user do |f| %>
+    <%=f.label "Password" %>
+    <%=f.password_field :password %><p><p>
+    <%=f.label "Confirm Password" %>
+    <%=f.password_field :password_confirmation %><p>
+    <%=f.submit "Update" %>
+<%end%>

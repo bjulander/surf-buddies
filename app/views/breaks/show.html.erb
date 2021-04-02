@@ -10,7 +10,6 @@
 <p><label> Suggested Skill: <%= @break.suggested_skill_level%></label></p>
 <p><label> Shakas: <%= @break.shakas%></label></p>
 <% if @break.user_id == current_user.id %>
-    <%= link_to "Edit", edit_break_path(@break) %>
+    <%= link_to "Edit", edit_break_path(@break) %><p>
+    <%=button_to("Delete", @break, method: :delete, data: {confirm: "Are you sure?"}) %>
 <%end%>
-<p>
-<%=button_to("Delete", @break, method: :delete, data: {confirm: "Are you sure?"}) %>

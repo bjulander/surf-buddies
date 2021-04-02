@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     skip_before_action :verified_user
+    require 'securerandom'
 
   def new
     @errors = []
@@ -21,7 +22,7 @@ class SessionsController < ApplicationController
 
   def create_with_fb
     user = User.find_or_create_by(username: outside_auth['info']['email']) do |u|
-      u.password = 'password'
+      u.password = SecureRandom.hex(13)
     end
     if user.save || user.id
       session[:user_id] = user.id
@@ -33,7 +34,7 @@ class SessionsController < ApplicationController
 
   def create_with_g
     user = User.find_or_create_by(username: outside_auth['info']['email']) do |u|
-      u.password = 'password'
+      u.password = SecureRandom.hex(13)
     end
     if user.save || user.id
       session[:user_id] = user.id

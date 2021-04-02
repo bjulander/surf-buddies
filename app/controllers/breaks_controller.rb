@@ -26,6 +26,7 @@ class BreaksController < ApplicationController
             @break.beach_id = params[:beach_id]
         end
         if @break.save
+            binding.pry
             redirect_to breaks_path
         else
             render :new
@@ -38,7 +39,7 @@ class BreaksController < ApplicationController
 
     def update
         if @break.update(break_params)
-            redirect_to(break_path(@break))
+            redirect_to (break_path(@break))
         else 
             render :edit
         end
