@@ -6,7 +6,7 @@
 <p><br>
 <h6> Search Breaks </h6>
    <%= form_with url: breaks_path, method: :get do |f| %>
-    <%= f.text_field :direction %>
+    <%= f.text_field :name %>
     <%= f.submit "Search" %>
     <%end%>
 
