@@ -2,8 +2,8 @@ class BreaksController < ApplicationController
     before_action(:set_break, except: [:index, :new, :create])
 
     def index
-        if params[:name]
-            @breaks = Break.name_search(params[:name])
+        if params[:direction]
+            @breaks = Break.direction_search(params[:direction])
         else
             @breaks = Break.all
         end

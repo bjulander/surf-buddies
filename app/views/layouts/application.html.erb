@@ -17,8 +17,10 @@ body {font-family: "helvicta", sans-serif}
   </body>
 
   <!-- Navbar -->
+  <head>
   <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
+
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="<%= root_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
       <% if !current_user %>
@@ -34,9 +36,13 @@ body {font-family: "helvicta", sans-serif}
   </div>
 </div>
 
-  <body>
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=1328368470860904&autoLogAppEvents=1" nonce="9aZ8Ct47"></script>
+<!-- Header -->
+<header>
+<div class="w3-content" style="max-width:3000px;margin-top:65px">
+
+
+
+
   <%=flash[:message]%>  
   <%= yield %>
   </body>
