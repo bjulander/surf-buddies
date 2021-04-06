@@ -1,4 +1,4 @@
-    <h4>Favorite Breaks</h4>
+    <h3>Favorite Breaks</h3>
    <% current_user.breaks.each do |b| %>
       <li><%= link_to(b.name, break_path(b))%></li>
    <%end%><p>

@@ -20,7 +20,6 @@ body {font-family: "helvicta", sans-serif}
   <head>
   <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
-
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="<%= root_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
       <% if !current_user %>
@@ -31,25 +30,23 @@ body {font-family: "helvicta", sans-serif}
           <a href="<%= user_beaches_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Beaches</a>
           <a href="<%= user_breaks_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Breaks</a>
           <a href="<%= new_user_profile_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Profile</a>
-          <%= link_to "Log Out",  logout_path, class:"w3-padding-large w3-button w3-hover-red w3-hide-small w3-right", method: :post %>
+          <%= link_to "LOG OUT",  logout_path, class:"w3-padding-large w3-button w3-hover-red w3-hide-small w3-right", method: :post %>
     <% end %>
   </div>
 </div>
+</head>
 
 <!-- Header -->
 <header>
-<div class="w3-content" style="max-width:3000px;margin-top:65px">
-
-
-
-
+<body>
+<div class="w3-content" style="max-width:3000px;margin-top:65px;margin-left:5px;">
   <%=flash[:message]%>  
   <%= yield %>
   </body>
-</html>
+  </header>
 
 <!-- Footer -->
-<footer class="w3-container w3-black" style="max-width:3000px;margin-top:5px">
+<footer class="w3-container w3-black" style="max-width:fit;margin-top:50px">
   <small>&copy; 2021 <strong>Surf Buddies</strong></small>
 </footer>
 

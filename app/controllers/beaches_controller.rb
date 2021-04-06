@@ -41,10 +41,9 @@ class BeachesController < ApplicationController
         end
     end
 
-    def destroy
-        @beach.delete
-        redirect_to beaches_path
-    end
+    def most
+        @beach = Beach.all.max {|a, b| a.breaks.count <=> b.breaks.count }
+    end 
 
     private 
 
