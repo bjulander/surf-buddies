@@ -1,24 +1,40 @@
-# README
+# Surf Buddies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ Surf Buddies is a social media platform built exclusively for surfers. being stuck in a place and not being able to surf is the definition of hell. Surf Buddies gives users to more ways to get out on the water. Being stuck at home with no car or no one to go surfing with is a sad truth most people face. Surf Buddies lets people connect with others in the area that either want to surf, but dont know where to go, dont have a way to transport their gear our themselves to the water, or are fully capable of going but dont like to surf alone for safety or other reasons. Not only does Surf Buddies give clear and accurate desciption of the beach and breaks in an aream, it also lets users review the spots and input suggested experience levels to ensure every surf knows what exactly to expect before arrive. This allows for people to plan accordingly for whatever the occasion may be: family trip, teaching a friend, local hotspot, etc. This app also lets users post and sell any equipment to fellow surfers! So whether your buying or selling equipment, you can be sure the next tool in your belt is fully what you expect before you buy. 
 
-Things you may want to cover:
+### Prerequisites
 
-* Ruby version
+This web application was written with the Ruby on Rails and uses several gems. The Installing section will show you how to install this gem! 
 
-* System dependencies
+### Installing
+    
+Copy the code of this repo.
 
-* Configuration
+In your terminal:
 
-* Database creation
+    git@github.com:bjulander/surf-buddies.git
 
-* Database initialization
+Go to the first level directory that contains all of Surf Buddy's folders. 
 
-* How to run the test suite
+    "bundle install" - this will install any necessary gems
 
-* Services (job queues, cache servers, search engines, etc.)
+Then,
 
-* Deployment instructions
+    rails s
 
-* ...
+Finally go to http://localhost:3000/ and you will be directed to the home page. 
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
+of conduct, and the process for submitting pull requests to us.
+
+
+## Authors
+ - **Blake Julander** -  -
+    [Blake Julander](https://github.com/bjulander)
+
+## License
+
+This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
+Creative Commons License - see the [LICENSE.md](LICENSE.md) file for details
