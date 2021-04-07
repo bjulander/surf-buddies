@@ -35,6 +35,7 @@ class BeachesController < ApplicationController
     def update
         if @beach.update(beach_params)
             redirect_to(beach_path(@beach))
+            flash[:message] = "Update Successful"
         else
             @breaks = @beach.breaks.select{|b| b.user_id == current_user.id}  
             render :edit

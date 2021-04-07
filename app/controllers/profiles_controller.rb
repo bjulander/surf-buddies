@@ -23,6 +23,7 @@ class ProfilesController < ApplicationController
   def update
     if @profile.update(profile_params)
       profile_show
+      flash[:message] = "Update Successful"
     else
       render :edit
     end
