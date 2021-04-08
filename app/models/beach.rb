@@ -8,6 +8,7 @@ class Beach < ApplicationRecord
     accepts_nested_attributes_for :breaks
 
     scope(:beaches_search, -> (name) {self.where("lower(name) = ?", name.downcase)})
+#    scope(:users_search, -> (id) {self.where("id = ?", id)})
 
 
     def title_case

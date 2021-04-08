@@ -42,9 +42,18 @@ class BeachesController < ApplicationController
         end
     end
 
-    def most
-        @beach = Beach.all.max {|a, b| a.breaks.count <=> b.breaks.count }
-    end 
+
+    #Coding exercises not related to the project 
+    # def most
+    #     @beach = Beach.all.max {|a, b| a.breaks.count <=> b.breaks.count }
+    # end 
+
+    # def beaches_users
+    #     if params[:beach_id]
+    #         @beach = Beach.users_search(params[:beach_id]).first
+    #         @users = @beach.users
+    #     end
+    # end
 
     private 
 

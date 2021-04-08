@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 root 'welcome#home'
 
-get "/beaches/most", to: "beaches#most"
+#Coding exercises not related to the project 
+# get "/beaches/most", to: "beaches#most"
+# get "/beaches/users", to: "beaches#beaches_users"
 
 resources (:users) do 
   resources :beaches
