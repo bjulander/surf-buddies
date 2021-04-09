@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Surf Buddy</title>
+<title>Surf Buddies</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -24,7 +24,7 @@ body {font-family: "helvicta", sans-serif}
     <a href="<%= root_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
       <% if !current_user %>
         <a href="<%= new_user_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Sign Up</a>
-        <a href="<%= login_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Log in</a>  
+        <a href="<%= login_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Log In</a>  
       <% end %>
       <% if current_user %>
           <a href="<%= user_beaches_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Beaches</a>

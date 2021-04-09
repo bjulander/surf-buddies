@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
       else
         @user = User.create(username: outside_auth['info']['email']) do |u|
         u.password = SecureRandom.hex(13)
+        flash[:message] = "Log in successful! Please create a password."
        end
       if @user.save
         session[:user_id] = @user.id
@@ -46,6 +47,7 @@ class SessionsController < ApplicationController
       else
         @user = User.create(username: outside_auth['info']['email']) do |u|
         u.password = SecureRandom.hex(13)
+        flash[:message] = "Log in successful! Please create a password."
       end
       if @user.save
         session[:user_id] = @user.id

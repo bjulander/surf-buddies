@@ -5,7 +5,7 @@ class BeachesController < ApplicationController
         if params[:name]
             @beaches = Beach.beaches_search(params[:name])
         else
-            @beaches = Beach.all
+            @beaches = Beach.beach_names
         end
     end
 
@@ -22,14 +22,14 @@ class BeachesController < ApplicationController
         @beach = Beach.new(beach_params)
         @beach.breaks.each {|b| b.user = current_user}
         if @beach.save
-            redirect_to beach_path(@beach)
+            redirect_to user_beaches_path(current_user, @beach)
         else
             render :new
         end
     end
 
     def edit
-        @breaks = @beach.breaks.where(user_id: current_user.id)
+        @beach = Beach.find_by(id: params[:id])
     end
 
     def update

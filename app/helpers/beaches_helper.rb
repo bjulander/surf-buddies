@@ -8,4 +8,8 @@ module BeachesHelper
         Beach.all
     end
 
+    def beach_break
+        @breaks = @beach.breaks.where(user_id: current_user.id)
+    end
+
 end
