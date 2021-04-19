@@ -27,7 +27,7 @@ body {font-family: "helvicta", sans-serif}
         <a href="<%= login_path %>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Log In</a>  
       <% end %>
       <% if current_user %>
-          <a href="<%= user_beaches_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Beaches</a>
+          <a href="<%= beaches_path%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Beaches</a>
           <a href="<%= user_breaks_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Breaks</a>
           <a href="<%= new_user_profile_path(current_user)%>" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Profile</a>
           <%= link_to "LOG OUT",  logout_path, class:"w3-padding-large w3-button w3-hover-red w3-hide-small w3-right", method: :post %>

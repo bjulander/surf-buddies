@@ -21,6 +21,7 @@ class BreaksController < ApplicationController
     def create 
         @break = Break.new(break_params)
         @break.user = current_user 
+        binding.pry
         if params[:beach_id]
             @break.beach_id = params[:beach_id]
         end
