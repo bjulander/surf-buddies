@@ -21,7 +21,6 @@ class BreaksController < ApplicationController
     def create 
         @break = Break.new(break_params)
         @break.user = current_user 
-        binding.pry
         if params[:beach_id]
             @break.beach_id = params[:beach_id]
         end
@@ -48,6 +47,7 @@ class BreaksController < ApplicationController
     def destroy
         break_owner
         @break.delete
+        redirect_to user_breaks_path(current_user)
     end
 
     private
@@ -59,5 +59,7 @@ class BreaksController < ApplicationController
     def set_break
         @break = Break.find_by(id: params[:id])
     end
+
+    
 
 end

@@ -1,6 +1,6 @@
     <h3>My Breaks</h3>
    <% current_user.breaks.each do |b| %>
-      <li><%= link_to(b.name, user_break_path(current_user, b))%></li>
+      <li><%= link_to(b.name, beach_break_path(b.beach_id, b))%></li>
    <%end%><p>
    <%= link_to "Add new break?", new_break_path%>
 <p><br>

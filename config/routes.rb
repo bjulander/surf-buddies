@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   # get "/beaches/most", to: "beaches#most"
   # get "/beaches/users", to: "beaches#beaches_users"
 
-  
-  resources :beaches
-
   resources (:users) do 
     resources :breaks
   end 
@@ -20,6 +17,7 @@ Rails.application.routes.draw do
   resources (:users) do 
     resources :profiles
   end 
+  
   resources :breaks
   #resources :profiles
 
