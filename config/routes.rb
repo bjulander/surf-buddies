@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get "/beaches/users", to: "beaches#beaches_users"
 
   resources (:users) do 
-    resources :breaks
+    resources :breaks, only: [:index]
   end 
 
   resources (:beaches) do 
@@ -17,9 +17,8 @@ Rails.application.routes.draw do
   resources (:users) do 
     resources :profiles
   end 
-  
-  resources :breaks
-  #resources :profiles
+
+  resources :breaks, except: [:index, :show]
 
   get '/signup', to: "users#new", as: "signup"
   post '/signup', to: "users#create"
