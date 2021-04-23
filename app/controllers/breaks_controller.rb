@@ -2,11 +2,17 @@ class BreaksController < ApplicationController
     before_action(:set_break, except: [:index, :new, :create])
 
     def index
-        if params[:direction]
-            @breaks = Break.direction_search(params[:direction])
-        else
-            @breaks = Break.all
-        end
+        @user = User.find_by(id: params[:user_id])
+            if @user 
+                @breaks = @user.breaks
+                if params[:direction]
+                    @all_breaks = Break.direction_search(params[:direction])
+                else
+                    @all_breaks = Break.all
+                end
+            else 
+                redirect_to beaches_path
+            end
     end
     
     def new

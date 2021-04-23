@@ -1,15 +1,15 @@
-    <h3>My Breaks</h3>
-   <% current_user.breaks.each do |b| %>
+    <h3><%=@user.username%>'s Breaks</h3>
+   <% @breaks.each do |b| %>
       <li><%= link_to(b.name, beach_break_path(b.beach_id, b))%></li>
    <%end%><p>
    <%= link_to "Add new break?", new_break_path%>
 <p><br>
 <h6> Search Breaks by direction </h6>
-   <%= form_with url: breaks_path, method: :get do |f| %>
+   <%= form_with url: user_breaks_path(@user), method: :get do |f| %>
     <%= f.text_field :direction %>
     <%= f.submit "Search" %>
     <%end%>
 
-<%= render(partial: "breaks", locals: {breaks: @breaks})%>
+<%= render(partial: "breaks", locals: {breaks: @all_breaks})%>
 
 
