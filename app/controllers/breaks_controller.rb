@@ -3,16 +3,16 @@ class BreaksController < ApplicationController
 
     def index
         @user = User.find_by(id: params[:user_id])
-            if @user 
-                @breaks = @user.breaks
-                if params[:direction]
-                    @all_breaks = Break.direction_search(params[:direction])
-                else
-                    @all_breaks = Break.all
-                end
-            else 
-                redirect_to beaches_path
+        if @user 
+            @breaks = @user.breaks
+            if params[:direction]
+                @all_breaks = Break.direction_search(params[:direction])
+            else
+                @all_breaks = Break.all
             end
+        else 
+            redirect_to beaches_path
+        end
     end
     
     def new
