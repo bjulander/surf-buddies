@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '3.0.0'
 
 gem 'bcrypt'
 gem 'pry'
@@ -9,7 +9,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
-gem 'thin'
+# gem 'thin', '~> 1.8.1'
 
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'sprockets-rails'
