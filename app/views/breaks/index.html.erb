@@ -1,4 +1,4 @@
-    <h3><%=@user.username%>'s Breaks</h3>
+   <h3><%=@user.username%>'s Breaks</h3>
    <% @breaks.each do |b| %>
       <li><%= link_to(b.name, beach_break_path(b.beach_id, b))%></li>
    <%end%><p>
