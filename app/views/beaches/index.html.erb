@@ -6,9 +6,9 @@
    <%end%>
    <%= link_to "Add new beach?", new_beach_path%>
    
-<p>
+   <hr>
 
-   <h6> Search All Beaches </h6>
+   <h6> Search for a beach </h6>
    <%= form_with url: beaches_path, method: :get do |f| %>
     <%= f.text_field :name%>
     <%= f.submit "Search" %>

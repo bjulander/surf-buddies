@@ -3,8 +3,8 @@
       <li><%= link_to(b.name, beach_break_path(b.beach_id, b))%></li>
    <%end%><p>
    <%= link_to "Add new break?", new_break_path%>
-<p><br>
-<h6> Search Breaks by direction </h6>
+<hr>
+<h6> Search breaks by direction </h6>
    <%= form_with url: user_breaks_path(@user), method: :get do |f| %>
     <%= f.text_field :direction %>
     <%= f.submit "Search" %>

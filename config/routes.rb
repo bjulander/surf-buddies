@@ -2,10 +2,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'welcome#home'
 
-  #Coding exercises not related to the project 
-  # get "/beaches/most", to: "beaches#most"
-  # get "/beaches/users", to: "beaches#beaches_users"
-
   resources (:users) do 
     resources :breaks, only: [:index]
   end 
@@ -18,7 +14,7 @@ Rails.application.routes.draw do
     resources :profiles
   end 
 
-  resources :breaks, except: [:index, :show]
+  resources :breaks
 
   get '/signup', to: "users#new", as: "signup"
   post '/signup', to: "users#create"

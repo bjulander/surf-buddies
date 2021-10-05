@@ -23,7 +23,6 @@ class BeachesController < ApplicationController
         @beach.breaks.each {|b| b.user = current_user}
         if @beach.save
             redirect_to user_beach_path(current_user, @beach)
-            binding.pry
         else
             render :new
         end
